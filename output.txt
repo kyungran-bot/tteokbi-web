@@ -1,0 +1,316 @@
+<!-- RESTORED PLACEHOLDER VIEWS -->
+<div class="placeholder-view" id="view-574-343">
+  574x343 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-574-366">
+  574x366 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-574-399">
+  574x399 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-574-446">
+  574x446 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-574-539">
+  574x539 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-574-568">
+  574x568 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-574-587">
+  574x587 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-574-605">
+  574x605 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-574-621">
+  574x621 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-600-319">
+  600x319 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-607-296">
+  607x296 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-616-492">
+  616x492 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-680-296">
+  680x296 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-713-625">
+  713x625 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-774-370">
+  774x370 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-788-627">
+  788x627 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-798-428">
+  798x428 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-868-629">
+  868x629 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-885-408">
+  885x408 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-942-387">
+  942x387 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-945-628">
+  945x628 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-1028-204">
+  1028x204 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-1033-233">
+  1033x233 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-1045-166">
+  1045x166 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-1095-331">
+  1095x331 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-1096-418">
+  1096x418 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-1106-165">
+  1106x165 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-1108-624">
+  1108x624 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-1130-321">
+  1130x321 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-1143-383">
+  1143x383 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-1164-168">
+  1164x168 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-1168-425">
+  1168x425 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-1184-193">
+  1184x193 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-1190-626">
+  1190x626 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-1198-224">
+  1198x224 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-1214-428">
+  1214x428 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-1218-180">
+  1218x180 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-1235-218">
+  1235x218 Screen
+  <span>Layout goes here</span>
+</div>
+<div class="placeholder-view" id="view-1235-482">
+  1235x482 Screen
+  <span>Layout goes here</span>
+</div>
+
+
+/* RESTORED MEDIA QUERIES */
+@media screen and (min-width: 570px) and (max-width: 578px) and (min-height: 339px) and (max-height: 347px) {
+  #desktop-view { display: none; }
+  #view-574-343 { display: flex; }
+}
+@media screen and (min-width: 570px) and (max-width: 578px) and (min-height: 362px) and (max-height: 370px) {
+  #desktop-view { display: none; }
+  #view-574-366 { display: flex; }
+}
+@media screen and (min-width: 570px) and (max-width: 578px) and (min-height: 395px) and (max-height: 403px) {
+  #desktop-view { display: none; }
+  #view-574-399 { display: flex; }
+}
+@media screen and (min-width: 570px) and (max-width: 578px) and (min-height: 442px) and (max-height: 450px) {
+  #desktop-view { display: none; }
+  #view-574-446 { display: flex; }
+}
+@media screen and (min-width: 570px) and (max-width: 578px) and (min-height: 535px) and (max-height: 543px) {
+  #desktop-view { display: none; }
+  #view-574-539 { display: flex; }
+}
+@media screen and (min-width: 570px) and (max-width: 578px) and (min-height: 564px) and (max-height: 572px) {
+  #desktop-view { display: none; }
+  #view-574-568 { display: flex; }
+}
+@media screen and (min-width: 570px) and (max-width: 578px) and (min-height: 583px) and (max-height: 591px) {
+  #desktop-view { display: none; }
+  #view-574-587 { display: flex; }
+}
+@media screen and (min-width: 570px) and (max-width: 578px) and (min-height: 601px) and (max-height: 609px) {
+  #desktop-view { display: none; }
+  #view-574-605 { display: flex; }
+}
+@media screen and (min-width: 570px) and (max-width: 578px) and (min-height: 617px) and (max-height: 625px) {
+  #desktop-view { display: none; }
+  #view-574-621 { display: flex; }
+}
+@media screen and (min-width: 596px) and (max-width: 604px) and (min-height: 315px) and (max-height: 323px) {
+  #desktop-view { display: none; }
+  #view-600-319 { display: flex; }
+}
+@media screen and (min-width: 603px) and (max-width: 611px) and (min-height: 292px) and (max-height: 300px) {
+  #desktop-view { display: none; }
+  #view-607-296 { display: flex; }
+}
+@media screen and (min-width: 612px) and (max-width: 620px) and (min-height: 488px) and (max-height: 496px) {
+  #desktop-view { display: none; }
+  #view-616-492 { display: flex; }
+}
+@media screen and (min-width: 676px) and (max-width: 684px) and (min-height: 292px) and (max-height: 300px) {
+  #desktop-view { display: none; }
+  #view-680-296 { display: flex; }
+}
+@media screen and (min-width: 709px) and (max-width: 717px) and (min-height: 621px) and (max-height: 629px) {
+  #desktop-view { display: none; }
+  #view-713-625 { display: flex; }
+}
+@media screen and (min-width: 770px) and (max-width: 778px) and (min-height: 366px) and (max-height: 374px) {
+  #desktop-view { display: none; }
+  #view-774-370 { display: flex; }
+}
+@media screen and (min-width: 784px) and (max-width: 792px) and (min-height: 623px) and (max-height: 631px) {
+  #desktop-view { display: none; }
+  #view-788-627 { display: flex; }
+}
+@media screen and (min-width: 794px) and (max-width: 802px) and (min-height: 424px) and (max-height: 432px) {
+  #desktop-view { display: none; }
+  #view-798-428 { display: flex; }
+}
+@media screen and (min-width: 864px) and (max-width: 872px) and (min-height: 625px) and (max-height: 633px) {
+  #desktop-view { display: none; }
+  #view-868-629 { display: flex; }
+}
+@media screen and (min-width: 881px) and (max-width: 889px) and (min-height: 404px) and (max-height: 412px) {
+  #desktop-view { display: none; }
+  #view-885-408 { display: flex; }
+}
+@media screen and (min-width: 938px) and (max-width: 946px) and (min-height: 383px) and (max-height: 391px) {
+  #desktop-view { display: none; }
+  #view-942-387 { display: flex; }
+}
+@media screen and (min-width: 941px) and (max-width: 949px) and (min-height: 624px) and (max-height: 632px) {
+  #desktop-view { display: none; }
+  #view-945-628 { display: flex; }
+}
+@media screen and (min-width: 1024px) and (max-width: 1032px) and (min-height: 200px) and (max-height: 208px) {
+  #desktop-view { display: none; }
+  #view-1028-204 { display: flex; }
+}
+@media screen and (min-width: 1029px) and (max-width: 1037px) and (min-height: 229px) and (max-height: 237px) {
+  #desktop-view { display: none; }
+  #view-1033-233 { display: flex; }
+}
+@media screen and (min-width: 1041px) and (max-width: 1049px) and (min-height: 162px) and (max-height: 170px) {
+  #desktop-view { display: none; }
+  #view-1045-166 { display: flex; }
+}
+@media screen and (min-width: 1091px) and (max-width: 1099px) and (min-height: 327px) and (max-height: 335px) {
+  #desktop-view { display: none; }
+  #view-1095-331 { display: flex; }
+}
+@media screen and (min-width: 1092px) and (max-width: 1100px) and (min-height: 414px) and (max-height: 422px) {
+  #desktop-view { display: none; }
+  #view-1096-418 { display: flex; }
+}
+@media screen and (min-width: 1102px) and (max-width: 1110px) and (min-height: 161px) and (max-height: 169px) {
+  #desktop-view { display: none; }
+  #view-1106-165 { display: flex; }
+}
+@media screen and (min-width: 1104px) and (max-width: 1112px) and (min-height: 620px) and (max-height: 628px) {
+  #desktop-view { display: none; }
+  #view-1108-624 { display: flex; }
+}
+@media screen and (min-width: 1126px) and (max-width: 1134px) and (min-height: 317px) and (max-height: 325px) {
+  #desktop-view { display: none; }
+  #view-1130-321 { display: flex; }
+}
+@media screen and (min-width: 1139px) and (max-width: 1147px) and (min-height: 379px) and (max-height: 387px) {
+  #desktop-view { display: none; }
+  #view-1143-383 { display: flex; }
+}
+@media screen and (min-width: 1160px) and (max-width: 1168px) and (min-height: 164px) and (max-height: 172px) {
+  #desktop-view { display: none; }
+  #view-1164-168 { display: flex; }
+}
+@media screen and (min-width: 1164px) and (max-width: 1172px) and (min-height: 421px) and (max-height: 429px) {
+  #desktop-view { display: none; }
+  #view-1168-425 { display: flex; }
+}
+@media screen and (min-width: 1180px) and (max-width: 1188px) and (min-height: 189px) and (max-height: 197px) {
+  #desktop-view { display: none; }
+  #view-1184-193 { display: flex; }
+}
+@media screen and (min-width: 1186px) and (max-width: 1194px) and (min-height: 622px) and (max-height: 630px) {
+  #desktop-view { display: none; }
+  #view-1190-626 { display: flex; }
+}
+@media screen and (min-width: 1194px) and (max-width: 1202px) and (min-height: 220px) and (max-height: 228px) {
+  #desktop-view { display: none; }
+  #view-1198-224 { display: flex; }
+}
+@media screen and (min-width: 1210px) and (max-width: 1218px) and (min-height: 424px) and (max-height: 432px) {
+  #desktop-view { display: none; }
+  #view-1214-428 { display: flex; }
+}
+@media screen and (min-width: 1214px) and (max-width: 1222px) and (min-height: 176px) and (max-height: 184px) {
+  #desktop-view { display: none; }
+  #view-1218-180 { display: flex; }
+}
+@media screen and (min-width: 1231px) and (max-width: 1239px) and (min-height: 214px) and (max-height: 222px) {
+  #desktop-view { display: none; }
+  #view-1235-218 { display: flex; }
+}
+@media screen and (min-width: 1231px) and (max-width: 1239px) and (min-height: 478px) and (max-height: 486px) {
+  #desktop-view { display: none; }
+  #view-1235-482 { display: flex; }
+}

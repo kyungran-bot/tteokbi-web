@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="bubblewand" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 289.05 275.32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ebf4f9;
+        font-family: Helvetica, Helvetica;
+        font-size: 16px;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #ebf4f9;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <text class="cls-1" transform="translate(.87 13.74)"><tspan x="0" y="0">When he was zero months old, </tspan><tspan x="0" y="19.2">something quite bad happened to him. </tspan><tspan x="0" y="38.4">It is said that he was born with a broken</tspan><tspan x="0" y="57.6">tailbone after being crushed by his older </tspan><tspan x="0" y="76.8">siblings while still in the womb.</tspan></text>
+  <polyline class="cls-2" points="22.24 128.24 41.57 107.48 53.74 148.29 75.22 160.46 85.96 174.06 84.53 188.38 69.49 207 117.46 194.83 136.8 222.75 171.88 238.5 195.51 223.47 199.8 196.26 177.61 171.92 159.71 164.76"/>
+  <polyline class="cls-2" points="12.36 149.35 1.05 182.97 16.39 234.85 62.43 264.81 134.04 274.31 184.46 265.54 199.8 242.89"/>
+</svg>

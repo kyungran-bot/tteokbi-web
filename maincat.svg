@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="bubblewand" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1334.8 863.84">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 18.95px;
+      }
+
+      .cls-1, .cls-2 {
+        font-family: Helvetica, Helvetica;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: #ebf4f9;
+      }
+
+      .cls-4 {
+        fill: none;
+        stroke: #ebf4f9;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+
+      .cls-5 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-7 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-2 {
+        font-size: 15.16px;
+        opacity: .6;
+      }
+    </style>
+  </defs>
+  <polyline class="cls-4" points="480.67 445.26 518.51 513.98 563.39 529.03 651.94 486.64 757.41 445.52 900.55 445.52 1016.33 498.93 1138.89 568.49 1134.92 510.17 1092.6 434.94 1008.05 353.48 922.09 244.41 904.73 192.89 900.08 142.62 922.38 64.01 1001.74 18.93 1089.09 7.49 1156.44 32.67 1213.3 104.93 1240.75 169.1 1218.53 199.59 1177.94 173.39 1153.94 120.73 1119.88 81.32 1026.82 72.48 967.51 105.68 964.45 172.82 982.56 219.53 1064.82 327.77 1149.97 402.97 1212.84 510.17 1244.74 605.22 1242.12 724.28 1168.97 851.89 628.05 848.3 274.19 840.6"/>
+  <circle class="cls-3" cx="200.37" cy="216.57" r="15.05"/>
+  <circle class="cls-3" cx="310.22" cy="295.15" r="15.05"/>
+  <circle class="cls-3" cx="391.84" cy="327.77" r="15.05"/>
+  <circle class="cls-3" cx="466.56" cy="422.2" r="7.49"/>
+  <circle class="cls-3" cx="517.09" cy="511.97" r="7.49"/>
+  <circle class="cls-3" cx="969.72" cy="107.17" r="7.49"/>
+  <circle class="cls-3" cx="922.09" cy="64.99" r="7.49"/>
+  <circle class="cls-3" cx="900.08" cy="142.62" r="7.49"/>
+  <circle class="cls-3" cx="966.07" cy="173.39" r="7.49"/>
+  <circle class="cls-3" cx="905.67" cy="194.43" r="7.49"/>
+  <circle class="cls-3" cx="981.12" cy="220.8" r="7.49"/>
+  <circle class="cls-3" cx="1066.04" cy="329.59" r="7.49"/>
+  <circle class="cls-3" cx="1148.93" cy="403.92" r="7.49"/>
+  <circle class="cls-3" cx="1133.49" cy="508.59" r="7.49"/>
+  <circle class="cls-3" cx="759.47" cy="445.96" r="7.49"/>
+  <circle class="cls-3" cx="656.75" cy="485.99" r="7.49"/>
+  <circle class="cls-3" cx="1015.52" cy="499.91" r="7.49"/>
+  <circle class="cls-3" cx="1213.33" cy="511.57" r="7.49"/>
+  <circle class="cls-3" cx="1009.23" cy="351.26" r="7.49"/>
+  <circle class="cls-3" cx="1091.73" cy="435.76" r="7.49"/>
+  <circle class="cls-3" cx="999.51" cy="21" r="7.49"/>
+  <circle class="cls-3" cx="1028.65" cy="72.48" r="7.49"/>
+  <circle class="cls-3" cx="1239.8" cy="166.34" r="7.49"/>
+  <circle class="cls-3" cx="1177.94" cy="173.39" r="7.49"/>
+  <circle class="cls-3" cx="1218.53" cy="199.15" r="7.49"/>
+  <circle class="cls-3" cx="1154.72" cy="122.15" r="7.49"/>
+  <circle class="cls-3" cx="1213.88" cy="104.37" r="7.49"/>
+  <circle class="cls-3" cx="1156.44" cy="32.67" r="7.49"/>
+  <circle class="cls-3" cx="1120.75" cy="82.87" r="7.49"/>
+  <circle class="cls-3" cx="1091.73" cy="7.49" r="7.49"/>
+  <circle class="cls-3" cx="566.91" cy="527.02" r="15.05"/>
+  <circle class="cls-3" cx="899.97" cy="445.96" r="15.05"/>
+  <circle class="cls-3" cx="1133.89" cy="567.9" r="15.05"/>
+  <circle class="cls-3" cx="1148.93" cy="403.92" r="15.05"/>
+  <circle class="cls-3" cx="1066.04" cy="329.59" r="15.05"/>
+  <circle class="cls-3" cx="926.03" cy="241.01" r="15.05"/>
+  <circle class="cls-3" cx="1221.37" cy="199.15" r="15.05"/>
+  <circle class="cls-3" cx="1244.74" cy="598.4" r="15.05"/>
+  <circle class="cls-3" cx="1244.74" cy="721.26" r="15.05"/>
+  <circle class="cls-3" cx="188.6" cy="332.91" r="15.05"/>
+  <circle class="cls-3" cx="104.4" cy="477.63" r="7.25"/>
+  <circle class="cls-3" cx="108.04" cy="425.55" r="7.25"/>
+  <circle class="cls-3" cx="137.19" cy="373.46" r="7.25"/>
+  <circle class="cls-3" cx="196.4" cy="302.33" r="7.25"/>
+  <circle class="cls-3" cx="83.49" cy="560.66" r="7.25"/>
+  <circle class="cls-3" cx="502.35" cy="844.06" r="7.25"/>
+  <circle class="cls-3" cx="634.32" cy="847.88" r="7.25"/>
+  <circle class="cls-3" cx="759.47" cy="848.8" r="7.25"/>
+  <circle class="cls-3" cx="892.17" cy="848.8" r="7.25"/>
+  <circle class="cls-3" cx="137.07" cy="703.88" r="7.25"/>
+  <circle class="cls-3" cx="26.35" cy="847.88" r="7.44"/>
+  <circle class="cls-3" cx="83.49" cy="519.15" r="15.05"/>
+  <circle class="cls-3" cx="122.03" cy="603.69" r="10.37"/>
+  <circle class="cls-3" cx="147.45" cy="779.95" r="10.37"/>
+  <circle class="cls-3" cx="10.64" cy="824.38" r="10.64"/>
+  <circle class="cls-3" cx="203.65" cy="623.67" r="15.05"/>
+  <circle class="cls-3" cx="76.43" cy="764.9" r="15.05"/>
+  <circle class="cls-3" cx="371.6" cy="844.06" r="15.05"/>
+  <circle class="cls-3" cx="213.28" cy="839.42" r="15.05"/>
+  <circle class="cls-3" cx="1028.94" cy="848.8" r="15.05"/>
+  <circle class="cls-3" cx="892.17" cy="847.88" r="15.05"/>
+  <circle class="cls-3" cx="1165.71" cy="848.8" r="15.05"/>
+  <polyline class="cls-4" points="221.7 839.06 26.07 847.88 10.64 820.94 70.14 768.72 145.51 781.72 136.83 702.39 223.51 652.59 199.27 615.49 116.42 604.55 82.97 558.54 82.97 521.69 104.08 477.62 107.6 423.91 136.83 370.96 186.49 336.05 197.02 304.76 197.02 213.31 306.32 289.71 390.65 328.33 468.63 423.91"/>
+  <text class="cls-1" transform="translate(196.4 180.88)"><tspan x="0" y="0">2014.</tspan><tspan class="cls-7" x="47.42" y="0">1</tspan><tspan x="56.56" y="0">1.01</tspan></text>
+  <text class="cls-1" transform="translate(406.89 305.62)"><tspan x="0" y="0">2014.</tspan><tspan class="cls-7" x="47.42" y="0">1</tspan><tspan x="56.56" y="0">1.22</tspan></text>
+  <text class="cls-1" transform="translate(1081.09 613.44)"><tspan x="0" y="0">1 years</tspan></text>
+  <text class="cls-1" transform="translate(794.86 241.01)"><tspan x="0" y="0">2016.</tspan><tspan class="cls-6" x="47.42" y="0">1</tspan><tspan class="cls-5" x="56.56" y="0">1.22</tspan></text>
+  <text class="cls-1" transform="translate(1227.24 241.37)"><tspan x="0" y="0">5 years</tspan></text>
+  <text class="cls-1" transform="translate(1165.71 380.71)"><tspan x="0" y="0">step.07</tspan></text>
+  <text class="cls-2" transform="translate(1189.12 351.26)"><tspan x="0" y="0">(for 6years~)</tspan></text>
+  <text class="cls-1" transform="translate(1272.66 696.63)"><tspan x="0" y="0">8 years</tspan></text>
+  <text class="cls-1" transform="translate(892.58 810.99)"><tspan x="0" y="0">2023. 08. 17</tspan></text>
+  <text class="cls-1" transform="translate(213.28 797.71)"><tspan x="0" y="0">10 year olds</tspan></text>
+  <text class="cls-1" transform="translate(7.43 485.99)"><tspan x="0" y="0">2026.</tspan><tspan x="0" y="22.74">04.04</tspan></text>
+  <text class="cls-1" transform="translate(559.44 569.76)"><tspan x="0" y="0">2 weeks</tspan></text>
+  <text class="cls-1" transform="translate(905.67 418.3)"><tspan x="0" y="0">3 month</tspan></text>
+</svg>

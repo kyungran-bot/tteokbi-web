@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="bubblewand" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175.15 153.01">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ebf4f9;
+        font-family: Helvetica, Helvetica;
+        font-size: 21px;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #ebf4f9;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        letter-spacing: -.09em;
+      }
+    </style>
+  </defs>
+  <text class="cls-1" transform="translate(7.55 18.03)"><tspan class="cls-3" x="0" y="0">Y</tspan><tspan x="12.08" y="0">our window size</tspan></text>
+  <rect class="cls-2" x=".5" y="35.79" width="174.15" height="116.72"/>
+</svg>

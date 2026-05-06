@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="bubblewand" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 349.07 209.35">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 21px;
+      }
+
+      .cls-1, .cls-2 {
+        font-family: Helvetica, Helvetica;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        fill: #ebf4f9;
+      }
+
+      .cls-2 {
+        font-size: 18px;
+      }
+
+      .cls-4 {
+        fill: none;
+        stroke: #ebf4f9;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <circle class="cls-3" cx="47.13" cy="69.69" r="15.88"/>
+  <circle class="cls-3" cx="47.13" cy="176.3" r="7.65"/>
+  <circle class="cls-3" cx="47.13" cy="127.11" r="10.95"/>
+  <text class="cls-1" transform="translate(.5 18.03)"><tspan x="0" y="0">Classification table</tspan></text>
+  <text class="cls-1" transform="translate(227.39 18.03)"><tspan x="0" y="0">Tteokbi ver_</tspan></text>
+  <rect class="cls-4" x=".5" y="37.13" width="348.07" height="171.72"/>
+  <text class="cls-2" transform="translate(91.41 76.92)"><tspan x="0" y="0">the most important event</tspan></text>
+  <text class="cls-2" transform="translate(91.61 131.25)"><tspan x="0" y="0">moderately important event</tspan></text>
+  <text class="cls-2" transform="translate(91.61 183.95)"><tspan x="0" y="0">just everyday life</tspan></text>
+</svg>

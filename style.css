@@ -1,0 +1,1497 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+
+* {
+  cursor: none !important;
+}
+
+.cat-relay-container {
+  position: absolute;
+  top: 22.8%;
+  width: 42px;
+  height: 42px;
+  z-index: 2;
+}
+
+.cat-8-relay-1 {
+  left: 4.8%;
+}
+
+.cat-8-relay-2 {
+  left: 9.3%;
+}
+
+.cat-8-relay-3 {
+  left: 13.8%;
+}
+
+.cat-relay-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+}
+
+/* 6 seconds total cycle: 0-3s for 8!, 3-6s for 8!! */
+
+/* 8! Icons (Normal) */
+.cat-8-relay-1 .icon-normal {
+  animation: fillStep1Normal 6s infinite;
+}
+
+.cat-8-relay-2 .icon-normal {
+  animation: fillStep2Normal 6s infinite;
+}
+
+.cat-8-relay-3 .icon-normal {
+  animation: fillStep3Normal 6s infinite;
+}
+
+@keyframes fillStep1Normal {
+
+  0%,
+  8% {
+    opacity: 0;
+  }
+
+  10%,
+  48% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fillStep2Normal {
+
+  0%,
+  23% {
+    opacity: 0;
+  }
+
+  25%,
+  48% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fillStep3Normal {
+
+  0%,
+  38% {
+    opacity: 0;
+  }
+
+  40%,
+  48% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 8!! Icons (Star) */
+.cat-8-relay-1 .icon-star {
+  animation: fillStep1Star 6s infinite;
+}
+
+.cat-8-relay-2 .icon-star {
+  animation: fillStep2Star 6s infinite;
+}
+
+.cat-8-relay-3 .icon-star {
+  animation: fillStep3Star 6s infinite;
+}
+
+@keyframes fillStep1Star {
+
+  0%,
+  58% {
+    opacity: 0;
+  }
+
+  60%,
+  98% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fillStep2Star {
+
+  0%,
+  73% {
+    opacity: 0;
+  }
+
+  75%,
+  98% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fillStep3Star {
+
+  0%,
+  88% {
+    opacity: 0;
+  }
+
+  90%,
+  98% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: difference;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #20140d;
+  color: #ebf4f9;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
+/* --- Main Screen --- */
+#desktop-view {
+  position: relative;
+  width: 1300px;
+  height: 750px;
+}
+
+#left-panel {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  /* width removed to let flex children dictate width */
+}
+
+#main-title-left {
+  width: 340px;
+  height: auto;
+}
+
+.top-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+#us-svg {
+  width: 400px;
+}
+
+#main-table {
+  width: 240px;
+}
+
+#center-panel {
+  position: absolute;
+  top: 30px;
+  left: 480px;
+  width: 800px;
+  height: 680px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title-svg {
+  width: 200px;
+  height: auto;
+}
+
+#main-cat {
+  width: 800px;
+  height: 550px;
+  object-fit: contain;
+}
+
+.ws-container {
+  position: relative;
+  width: 110px;
+  top: 11px;
+}
+
+#ws-svg {
+  width: 100%;
+  display: block;
+}
+
+#window-size-text {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15px;
+  font-family: inherit;
+  color: #ebf4f9;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* --- Sound Toggle --- */
+#sound-toggle {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#sound-toggle:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+#sound-toggle svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* state handling */
+#sound-toggle.sound-off #icon-on {
+  display: none;
+}
+
+#sound-toggle.sound-on #icon-off {
+  display: none;
+}
+
+
+
+/* =========================================
+   화면 좌표 기반 미디어 쿼리 세팅 구간
+========================================= */
+
+/* 딱 611x251 근처(±4px 허용)일 때 뷰를 보여줍니다. */
+@media screen and (min-width: 607px) and (max-width: 615px) and (min-height: 247px) and (max-height: 255px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #mobile-view {
+    display: flex;
+  }
+}
+
+/* --- 2014.11.01 View Specific Layout --- */
+.mobile-layout-container {
+  position: relative;
+  width: 580px;
+  height: 226px;
+  /* 비율(2297x897)에 맞춤 */
+  max-width: 90vw;
+}
+
+.mobile-text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+@keyframes continuousShake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+.mobile-cr-graphic {
+  position: absolute;
+  top: 42%;
+  left: 20%;
+  width: 13%;
+  /* 적당히 작은 크기 */
+  z-index: 2;
+  animation: continuousShake 0.5s infinite linear;
+}
+
+.mobile-cat-photo {
+  position: absolute;
+  top: 8%;
+  right: 2%;
+  width: 23%;
+  height: 63%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* =========================================
+   추가 11개 화면 좌표 기반 미디어 쿼리 구간 (테스트용 공간)
+========================================= */
+
+
+
+.placeholder-view {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #e9f4f9;
+  color: #17120f;
+  font-family: inherit;
+  font-size: 30px;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+.placeholder-view span {
+  font-size: 16px;
+  margin-top: 20px;
+  opacity: 0.6;
+}
+
+/* 1. 725x313 */
+@media screen and (min-width: 717px) and (max-width: 733px) and (min-height: 305px) and (max-height: 321px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-725-313 {
+    display: flex;
+  }
+}
+
+/* 2. 574x423 */
+@media screen and (min-width: 566px) and (max-width: 582px) and (min-height: 415px) and (max-height: 431px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-574-423 {
+    display: flex;
+  }
+}
+
+/* 3. 830x435 */
+@media screen and (min-width: 822px) and (max-width: 838px) and (min-height: 427px) and (max-height: 443px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-830-435 {
+    display: flex;
+  }
+}
+
+/* 4. 617x623 */
+@media screen and (min-width: 609px) and (max-width: 625px) and (min-height: 615px) and (max-height: 631px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-617-623 {
+    display: flex;
+  }
+}
+
+/* 5. 1026x391 */
+@media screen and (min-width: 1006px) and (max-width: 1046px) and (min-height: 371px) and (max-height: 411px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1026-391 {
+    display: flex;
+  }
+}
+
+/* 6. 1027x623 */
+@media screen and (min-width: 1019px) and (max-width: 1035px) and (min-height: 615px) and (max-height: 631px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1027-623 {
+    display: flex;
+  }
+}
+
+/* 7. 1061x276 */
+@media screen and (min-width: 1053px) and (max-width: 1069px) and (min-height: 268px) and (max-height: 284px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1061-276 {
+    display: flex;
+  }
+}
+
+/* 8. 1221x238 */
+@media screen and (min-width: 1213px) and (max-width: 1229px) and (min-height: 230px) and (max-height: 246px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1221-238 {
+    display: flex;
+  }
+}
+
+/* 9. 1178x361 */
+@media screen and (min-width: 1170px) and (max-width: 1186px) and (min-height: 353px) and (max-height: 369px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1178-361 {
+    display: flex;
+  }
+}
+
+
+
+/* 11. 1235x552 */
+@media screen and (min-width: 1227px) and (max-width: 1243px) and (min-height: 544px) and (max-height: 560px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1235-552 {
+    display: flex;
+  }
+}
+
+/* 12. 1150x450 (1 years 추가) */
+@media screen and (min-width: 1142px) and (max-width: 1158px) and (min-height: 442px) and (max-height: 458px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1150-450 {
+    display: flex;
+  }
+}
+
+.story-image {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+@keyframes dududungLeft {
+  0% {
+    transform: scaleX(-1) scale(1) translate(0, 0);
+  }
+
+  10% {
+    transform: scaleX(-1) scale(1.15) translate(3px, -3px);
+  }
+
+  20% {
+    transform: scaleX(-1) scale(1.15) translate(-3px, 3px);
+  }
+
+  30% {
+    transform: scaleX(-1) scale(1.15) translate(3px, 3px);
+  }
+
+  40% {
+    transform: scaleX(-1) scale(1.15) translate(-3px, -3px);
+  }
+
+  50% {
+    transform: scaleX(-1) scale(1) translate(0, 0);
+  }
+
+  100% {
+    transform: scaleX(-1) scale(1) translate(0, 0);
+  }
+}
+
+@keyframes dududungRight {
+  0% {
+    transform: scaleX(1) scale(1) translate(0, 0);
+  }
+
+  10% {
+    transform: scaleX(1) scale(1.15) translate(-3px, -3px);
+  }
+
+  20% {
+    transform: scaleX(1) scale(1.15) translate(3px, 3px);
+  }
+
+  30% {
+    transform: scaleX(1) scale(1.15) translate(-3px, 3px);
+  }
+
+  40% {
+    transform: scaleX(1) scale(1.15) translate(3px, -3px);
+  }
+
+  50% {
+    transform: scaleX(1) scale(1) translate(0, 0);
+  }
+
+  100% {
+    transform: scaleX(1) scale(1) translate(0, 0);
+  }
+}
+
+.cr-left {
+  position: absolute;
+  top: 22%;
+  left: 28%;
+  width: 9%;
+  z-index: 2;
+  transform: scaleX(-1);
+  animation: dududungLeft 1.2s infinite ease-in-out;
+}
+
+.cr-right {
+  position: absolute;
+  top: 22%;
+  right: 28%;
+  width: 9%;
+  z-index: 2;
+  animation: dududungRight 1.2s infinite ease-in-out;
+}
+
+@keyframes stopMotionDot1 {
+
+  0%,
+  75% {
+    opacity: 1;
+  }
+
+  76%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes stopMotionDot2 {
+
+  0%,
+  24% {
+    opacity: 0;
+  }
+
+  25%,
+  75% {
+    opacity: 1;
+  }
+
+  76%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes stopMotionDot3 {
+
+  0%,
+  49% {
+    opacity: 0;
+  }
+
+  50%,
+  75% {
+    opacity: 1;
+  }
+
+  76%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.dot-anim {
+  position: absolute;
+  top: 24%;
+  width: 2.2%;
+  z-index: 2;
+}
+
+.dot-1 {
+  left: 6%;
+  animation: stopMotionDot1 2.5s infinite;
+}
+
+.dot-2 {
+  left: 9%;
+  animation: stopMotionDot2 2.5s infinite;
+}
+
+.dot-3 {
+  left: 12%;
+  animation: stopMotionDot3 2.5s infinite;
+}
+
+@keyframes stopMotionPaw1 {
+
+  0%,
+  19% {
+    opacity: 0;
+  }
+
+  20%,
+  80% {
+    opacity: 1;
+  }
+
+  81%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes stopMotionPaw2 {
+
+  0%,
+  39% {
+    opacity: 0;
+  }
+
+  40%,
+  80% {
+    opacity: 1;
+  }
+
+  81%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.paw-anim {
+  position: absolute;
+  z-index: 2;
+}
+
+.paw-1 {
+  left: 14%;
+  top: 32%;
+  width: 6%;
+  animation: stopMotionPaw1 2.5s infinite;
+}
+
+.paw-2 {
+  left: 23%;
+  top: 20%;
+  width: 5%;
+  transform: rotate(-15deg);
+  animation: stopMotionPaw2 2.5s infinite;
+}
+
+.paw-3 {
+  left: 32%;
+  top: 8%;
+  width: 4%;
+  animation: stopMotionPaw3 2.5s infinite;
+}
+
+@keyframes stopMotionPaw3 {
+
+  0%,
+  59% {
+    opacity: 0;
+  }
+
+  60%,
+  80% {
+    opacity: 1;
+  }
+
+  81%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.cats-row {
+  position: absolute;
+  left: 6%;
+  bottom: 8%;
+  width: 30%;
+  z-index: 2;
+}
+
+.cat-blink-1,
+.cat-blink-2 {
+  position: absolute;
+  left: 36.5%;
+  bottom: 8%;
+  width: 4.8%;
+  z-index: 2;
+}
+
+.cat-blink-1 {
+  animation: catBlinkSwap1 2s infinite;
+}
+
+.cat-blink-2 {
+  animation: catBlinkSwap2 2s infinite;
+}
+
+@keyframes catBlinkSwap1 {
+
+  0%,
+  49.9% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes catBlinkSwap2 {
+
+  0%,
+  49.9% {
+    opacity: 0;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+  }
+}
+
+.tb-container {
+  position: absolute;
+  left: 36%;
+  top: 38%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.typing-text {
+  font-family: "Apple SD Gothic Neo", "AppleSDGothicNeo", "Malgun Gothic", sans-serif;
+  font-size: 1.8vw;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 6px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid black;
+  animation: typing 4s steps(15, end) infinite, blinkCaret .75s step-end infinite;
+}
+
+.tb-image {
+  width: 6.5vw;
+  height: auto;
+}
+
+@keyframes typing {
+
+  0%,
+  10% {
+    width: 0;
+  }
+
+  40%,
+  80% {
+    width: 12.5ch;
+  }
+
+  90%,
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes blinkCaret {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: black;
+  }
+}
+
+.mansu-container {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.typing-text-mansu {
+  font-family: Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-weight: 700;
+  font-size: 1.0rem;
+  color: #17120f;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #17120f;
+  width: auto;
+  max-width: 0;
+  animation: typingMansu 3s steps(20, end) infinite, blinkCaretMansu 0.75s step-end infinite;
+}
+
+@keyframes typingMansu {
+
+  0%,
+  10% {
+    max-width: 0;
+  }
+
+  80%,
+  100% {
+    max-width: 20em;
+  }
+}
+
+@keyframes blinkCaretMansu {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: #17120f;
+  }
+}
+
+#use-here-container {
+  position: absolute;
+  bottom: -10px;
+  right: -150px;
+  width: 100px;
+  height: 78px;
+  z-index: 10;
+}
+
+.use-here-1,
+.use-here-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px !important;
+  height: auto !important;
+  max-width: none;
+}
+
+.use-here-1 {
+  animation: catBlinkSwap1 1s infinite;
+}
+
+.use-here-2 {
+  animation: catBlinkSwap2 1s infinite;
+}
+
+#title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#kr-subtitle {
+  width: 310px;
+  height: auto;
+  margin-top: 2px;
+  margin-left: 80px;
+}
+
+/* --- 10 Year Olds Screen (1168x425) --- */
+#view-1168-425 {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  background-color: #ebf4f9;
+  /* Blue background matching the screenshot */
+}
+
+.story-image-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.walk-anim-container {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.target-square {
+  width: 40px;
+  height: 50px;
+  background-color: #17120f;
+  border: 2px solid #17120f;
+  position: absolute;
+}
+
+.square-left {
+  left: 20%;
+  animation: squareStyleLeft 4s infinite ease-in-out;
+}
+
+.square-right {
+  right: 20%;
+  animation: squareStyleRight 4s infinite ease-in-out;
+}
+
+.tb-walker {
+  width: 30px;
+  height: auto;
+  z-index: 11;
+  animation: catWalking 4s infinite ease-in-out;
+}
+
+@keyframes catWalking {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(calc(-30vw + 20px));
+  }
+
+  /* Towards left square */
+  50% {
+    transform: translateX(0);
+  }
+
+  75% {
+    transform: translateX(calc(30vw - 20px));
+  }
+
+  /* Towards right square */
+}
+
+@keyframes squareStyleLeft {
+
+  0%,
+  20%,
+  30%,
+  100% {
+    background-color: #17120f;
+  }
+
+  25% {
+    background-color: transparent;
+  }
+
+  /* Stroke only */
+}
+
+@keyframes squareStyleRight {
+
+  0%,
+  70%,
+  80%,
+  100% {
+    background-color: #17120f;
+  }
+
+  75% {
+    background-color: transparent;
+  }
+
+  /* Stroke only */
+}
+
+/* RESTORED MEDIA QUERIES */
+@media screen and (min-width: 570px) and (max-width: 578px) and (min-height: 339px) and (max-height: 347px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-574-343 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 570px) and (max-width: 578px) and (min-height: 362px) and (max-height: 370px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-574-366 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 570px) and (max-width: 578px) and (min-height: 395px) and (max-height: 403px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-574-399 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 570px) and (max-width: 578px) and (min-height: 442px) and (max-height: 450px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-574-446 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 570px) and (max-width: 578px) and (min-height: 535px) and (max-height: 543px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-574-539 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 570px) and (max-width: 578px) and (min-height: 564px) and (max-height: 572px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-574-568 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 570px) and (max-width: 578px) and (min-height: 583px) and (max-height: 591px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-574-587 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 570px) and (max-width: 578px) and (min-height: 601px) and (max-height: 609px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-574-605 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 570px) and (max-width: 578px) and (min-height: 617px) and (max-height: 625px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-574-621 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 596px) and (max-width: 604px) and (min-height: 315px) and (max-height: 323px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-600-319 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 603px) and (max-width: 611px) and (min-height: 292px) and (max-height: 300px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-607-296 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 612px) and (max-width: 620px) and (min-height: 488px) and (max-height: 496px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-616-492 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 676px) and (max-width: 684px) and (min-height: 292px) and (max-height: 300px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-680-296 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 709px) and (max-width: 717px) and (min-height: 621px) and (max-height: 629px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-713-625 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 770px) and (max-width: 778px) and (min-height: 366px) and (max-height: 374px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-774-370 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 784px) and (max-width: 792px) and (min-height: 623px) and (max-height: 631px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-788-627 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 794px) and (max-width: 802px) and (min-height: 424px) and (max-height: 432px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-798-428 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 864px) and (max-width: 872px) and (min-height: 625px) and (max-height: 633px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-868-629 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 881px) and (max-width: 889px) and (min-height: 404px) and (max-height: 412px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-885-408 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 938px) and (max-width: 946px) and (min-height: 383px) and (max-height: 391px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-942-387 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 941px) and (max-width: 949px) and (min-height: 624px) and (max-height: 632px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-945-628 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1032px) and (min-height: 200px) and (max-height: 208px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1028-204 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1029px) and (max-width: 1037px) and (min-height: 229px) and (max-height: 237px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1033-233 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1041px) and (max-width: 1049px) and (min-height: 162px) and (max-height: 170px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1045-166 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1091px) and (max-width: 1099px) and (min-height: 327px) and (max-height: 335px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1095-331 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1092px) and (max-width: 1100px) and (min-height: 414px) and (max-height: 422px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1096-418 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1102px) and (max-width: 1110px) and (min-height: 161px) and (max-height: 169px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1106-165 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1104px) and (max-width: 1112px) and (min-height: 620px) and (max-height: 628px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1108-624 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1126px) and (max-width: 1134px) and (min-height: 317px) and (max-height: 325px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1130-321 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1139px) and (max-width: 1147px) and (min-height: 379px) and (max-height: 387px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1143-383 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1160px) and (max-width: 1168px) and (min-height: 164px) and (max-height: 172px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1164-168 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1164px) and (max-width: 1172px) and (min-height: 421px) and (max-height: 429px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1168-425 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1180px) and (max-width: 1188px) and (min-height: 189px) and (max-height: 197px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1184-193 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1186px) and (max-width: 1194px) and (min-height: 622px) and (max-height: 630px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1190-626 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1194px) and (max-width: 1202px) and (min-height: 220px) and (max-height: 228px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1198-224 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1210px) and (max-width: 1218px) and (min-height: 424px) and (max-height: 432px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1214-428 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1214px) and (max-width: 1222px) and (min-height: 176px) and (max-height: 184px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1218-180 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1231px) and (max-width: 1239px) and (min-height: 214px) and (max-height: 222px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1235-218 {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1231px) and (max-width: 1239px) and (min-height: 478px) and (max-height: 486px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #view-1235-482 {
+    display: flex;
+  }
+}

@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tteokbi Web</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Main View -->
+  <div id="desktop-view">
+    <!-- Left Panel: us, ws, and maintable -->
+    <div id="left-panel">
+      <div id="title-group">
+        <img src="title.svg" id="main-title-left" alt="Tteokbi Archive Map">
+        <img src="kr.png" id="kr-subtitle" alt="kr subtitle">
+      </div>
+      <div class="top-row">
+        <img id="us-svg" src="us_.png" alt="us">
+        <div class="ws-container">
+          <img src="ws.svg" id="ws-svg" alt="Window Size Box">
+          <div id="window-size-text"></div>
+        </div>
+      </div>
+      <img src="maintable.svg" id="main-table" alt="Classification Table">
+    </div>
+
+    <!-- Center/Right Panel: maincat and titles -->
+    <div id="center-panel">
+      <img src="title.svg" class="title-svg" style="visibility: hidden;" alt="Title Top">
+      <img src="maincat.svg" id="main-cat" alt="Tteokbi Constellation">
+      <img src="title.svg" class="title-svg" style="visibility: hidden;" alt="Title Bottom">
+    </div>
+
+    <!-- Sound Toggle Button -->
+    <div id="sound-toggle" class="sound-off">
+      <svg id="icon-on" viewBox="0 0 24 24" fill="none" stroke="#ebf4f9" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+      </svg>
+      <svg id="icon-off" viewBox="0 0 24 24" fill="none" stroke="#ebf4f9" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+        <line x1="23" y1="9" x2="17" y2="15"></line>
+        <line x1="17" y1="9" x2="23" y2="15"></line>
+      </svg>
+    </div>
+
+    <!-- Use Here Graphic -->
+    <div id="use-here-container">
+      <img src="uh.png" class="use-here-1" alt="use here 1">
+      <img src="uh1.png" class="use-here-2" alt="use here 2">
+    </div>
+  </div>
+
+  <audio id="bg-music" loop src="765761__tigerlily0416__cat-drinking-variation-1.wav" preload="auto"></audio>
+  <audio id="heartbeat-music" loop src="mixkit-cinematic-heartbeat-ambience-497.wav" preload="auto"></audio>
+  <audio id="little-cat-music" src="mixkit-little-cat-attention-meow-86.wav" preload="auto"></audio>
+  <audio id="sweet-kitty-music" src="mixkit-sweet-kitty-meow-93.wav" preload="auto"></audio>
+  <audio id="cat-pain-music" src="mixkit-little-cat-pain-meow-87.wav" preload="auto"></audio>
+  <audio id="cartoon-begging-music" src="mixkit-cartoon-kitty-begging-meow-92.wav" preload="auto"></audio>
+  <audio id="hungry-music" src="mixkit-domestic-cat-hungry-meow-45.wav" preload="auto"></audio>
+  <audio id="angry-cartoon-music" src="mixkit-angry-cartoon-kitty-meow-94.wav" preload="auto"></audio>
+  <audio id="angry-wild-music" src="mixkit-angry-wild-cat-roar-89.wav" preload="auto"></audio>
+  <audio id="purr-music" src="mixkit-big-wild-cat-long-purr-96.wav" preload="auto"></audio>
+  <audio id="rareguy-music" src="690620__rareguy27__cat-purr.wav" preload="auto"></audio>
+  <audio id="happy-cat-music" src="668632__alizardguy__cat-happy-meow.wav" preload="auto"></audio>
+  <audio id="eating-cat-music" src="162822__xo9rh11o3w__cat-eating.ogg" preload="auto"></audio>
+
+  <script>
+    // 점들에 해당하는 화면 크기 (너비, 높이)와 표시할 텍스트를 설정합니다.
+    // 사용자가 창 크기를 조절하여 우측 하단 모서리를 점에 맞출 때 뜨는 화면의 너비/높이를 여기에 입력하세요.
+    // 현재 표시기가 실시간으로 1024x768 등의 창 사이즈를 보여주므로, 직접 모서리를 점에 맞춘 후 그 숫자를 적으시면 됩니다!
+    const targetPoints = [
+      { text: "2014.11.01", x: 667, y: 263 },      // 예시키
+      { text: "2014.11.22", x: 787, y: 326 },
+      { text: "2 weeks", x: 864, y: 471 },
+      { text: "3 month", x: 1054, y: 403 },        // 예시키
+      { text: "8 years", x: 1235, y: 552 },        // 예시키
+      { text: "1 years", x: 1150, y: 450 },
+      { text: "2016.11.22", x: 1061, y: 276 },
+      { text: "5 years", x: 1260, y: 268 },
+      { text: "step.07", x: 1211, y: 376 },       // 예시키
+      { text: "10 year olds", x: 672, y: 630 },    // 예시키
+      { text: "2023.08.17", x: 1027, y: 623 },      // 예시키
+      { text: "2026.04.04", x: 582, y: 488 }       // 예시키
+    ];
+
+    const PROXIMITY_THRESHOLD = 30; // 점 근처 30px 이내로 창 모서리가 들어오면 인식
+
+    function updateWindowSize() {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      let displayText = `${width}x${height}`; // 기본 표시 텍스트
+
+      // 각 타겟 점들과 현재 창 우측 하단(width, height) 사이의 거리 계산
+      for (let i = 0; i < targetPoints.length; i++) {
+        const point = targetPoints[i];
+
+        // 피타고라스의 정리로 거리 계산
+        const dx = width - point.x;
+        const dy = height - point.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance <= PROXIMITY_THRESHOLD) {
+          displayText = point.text;
+          break; // 가장 처음으로 근접한 점의 텍스트를 표시
+        }
+      }
+
+      document.getElementById('window-size-text').innerText = displayText;
+
+      // Handle audio playback based on current screen
+      checkAudioState();
+    }
+
+    const audio = document.getElementById('bg-music');
+    const heartbeatAudio = document.getElementById('heartbeat-music');
+    const littleCatAudio = document.getElementById('little-cat-music');
+    const sweetKittyAudio = document.getElementById('sweet-kitty-music');
+    const catPainAudio = document.getElementById('cat-pain-music');
+    const cartoonBeggingAudio = document.getElementById('cartoon-begging-music');
+    const hungryAudio = document.getElementById('hungry-music');
+    const angryCartoonAudio = document.getElementById('angry-cartoon-music');
+    const angryWildAudio = document.getElementById('angry-wild-music');
+    const purrAudio = document.getElementById('purr-music');
+    const rareguyAudio = document.getElementById('rareguy-music');
+    const happyCatAudio = document.getElementById('happy-cat-music');
+    const eatingCatAudio = document.getElementById('eating-cat-music');
+    const soundToggle = document.getElementById('sound-toggle');
+    const desktopView = document.getElementById('desktop-view');
+    let isSoundIntendedToPlay = false; // User's preference for sound
+
+    // Toggle sound when clicking the icon
+    soundToggle.addEventListener('click', () => {
+      isSoundIntendedToPlay = !isSoundIntendedToPlay;
+
+      if (isSoundIntendedToPlay) {
+        soundToggle.classList.remove('sound-off');
+        soundToggle.classList.add('sound-on');
+      } else {
+        soundToggle.classList.remove('sound-on');
+        soundToggle.classList.add('sound-off');
+      }
+
+      checkAudioState();
+    });
+
+    // Function to handle play/pause for a specific audio element
+    function toggleAudioPlayback(audioEl, shouldPlay, isOneShot = false) {
+      if (!audioEl) return;
+      if (shouldPlay && isSoundIntendedToPlay) {
+        if (audioEl.paused && (!isOneShot || !audioEl.ended)) {
+          audioEl.play().catch(e => console.log("Audio playback was prevented."));
+        }
+      } else {
+        if (!audioEl.paused) {
+          audioEl.pause();
+        }
+        if (isOneShot) {
+          audioEl.currentTime = 0; // reset so it can play again when returning to the screen
+        }
+      }
+    }
+
+    // Check if we are on the main screen and play/pause audio accordingly
+    function checkAudioState() {
+      const mobileView = document.getElementById('mobile-view');
+      const view1d = document.getElementById('view-725-313'); // 1d_ png screen
+      const view2w = document.getElementById('view-830-435'); // 2w png screen
+      const view1y = document.getElementById('view-1150-450'); // 1y png screen
+      const view3 = document.getElementById('view-1026-391'); // 3 png screen
+      const view8 = document.getElementById('view-1235-552'); // 8 png screen
+      const view2y = document.getElementById('view-1061-276'); // 2y png screen
+      const view5y = document.getElementById('view-1221-238'); // 5y png screen
+      const view6 = document.getElementById('view-1178-361'); // 6 png screen
+      const view9 = document.getElementById('view-1027-623'); // 9 png screen
+      const view10 = document.getElementById('view-617-623'); // 10 png screen
+      const view11 = document.getElementById('view-574-423'); // 11 png screen
+
+      const isMainScreen = window.getComputedStyle(desktopView).display !== 'none';
+      const isMobileScreen = mobileView && window.getComputedStyle(mobileView).display !== 'none';
+      const is1dScreen = view1d && window.getComputedStyle(view1d).display !== 'none';
+      const is2wScreen = view2w && window.getComputedStyle(view2w).display !== 'none';
+      const is1yScreen = view1y && window.getComputedStyle(view1y).display !== 'none';
+      const is3Screen = view3 && window.getComputedStyle(view3).display !== 'none';
+      const is8Screen = view8 && window.getComputedStyle(view8).display !== 'none';
+      const is2yScreen = view2y && window.getComputedStyle(view2y).display !== 'none';
+      const is5yScreen = view5y && window.getComputedStyle(view5y).display !== 'none';
+      const is6Screen = view6 && window.getComputedStyle(view6).display !== 'none';
+      const is9Screen = view9 && window.getComputedStyle(view9).display !== 'none';
+      const is10Screen = view10 && window.getComputedStyle(view10).display !== 'none';
+      const is11Screen = view11 && window.getComputedStyle(view11).display !== 'none';
+
+      toggleAudioPlayback(audio, isMainScreen, false);
+      toggleAudioPlayback(heartbeatAudio, isMobileScreen, false);
+      toggleAudioPlayback(littleCatAudio, is1dScreen, true);
+      toggleAudioPlayback(sweetKittyAudio, is2wScreen, true);
+      toggleAudioPlayback(catPainAudio, is1yScreen, true);
+      toggleAudioPlayback(cartoonBeggingAudio, is3Screen, true);
+      toggleAudioPlayback(hungryAudio, is8Screen, true);
+      toggleAudioPlayback(angryCartoonAudio, is2yScreen, true);
+      toggleAudioPlayback(angryWildAudio, is5yScreen, true);
+      toggleAudioPlayback(purrAudio, is6Screen, true);
+      toggleAudioPlayback(rareguyAudio, is9Screen, true);
+      toggleAudioPlayback(happyCatAudio, is10Screen, true);
+      toggleAudioPlayback(eatingCatAudio, is11Screen, true);
+    }
+
+    window.addEventListener('resize', updateWindowSize);
+    window.addEventListener('DOMContentLoaded', updateWindowSize);
+  </script>
+
+
+  <!-- 2014.11.01 View -->
+  <div class="placeholder-view" id="mobile-view">
+    <div class="mobile-layout-container">
+      <img src="-0_.png" class="mobile-text-overlay" alt="Story Text">
+      <img src="cr.png" class="mobile-cr-graphic" alt="Broken tailbone graphic">
+    </div>
+  </div>
+
+  <!-- 테스트용 임시 11개 빈 페이지 공간 -->
+  <div class="placeholder-view" id="view-725-313">
+    <div class="video-overlay-container" style="position: relative; width: 100vw; height: 100vh;">
+      <img src="1d_ copy.png" class="story-image" style="position: absolute; top: 0; left: 0; z-index: 1;"
+        alt="1d_.png">
+      <img src="ac.png" class="cats-row" alt="cats">
+      <img src="c1.png" class="cat-blink-1" alt="small cat 1">
+      <img src="c2.png" class="cat-blink-2" alt="small cat 2">
+    </div>
+  </div>
+  <div class="placeholder-view" id="view-574-423">
+    <img src="11_1.png" class="story-image" style="width: 100%; height: 100%; object-fit: contain;" alt="11.png">
+  </div>
+  <div class="placeholder-view" id="view-830-435">
+    <div class="video-overlay-container" style="position: relative; width: 100vw; height: 100vh;">
+      <img src="2w_.png" class="story-image" style="position: absolute; top: 0; left: 0; z-index: 1;" alt="2w.png">
+      <div class="tb-container">
+        <div class="typing-text">TTeokbi alone..</div>
+        <img src="tb.png" class="tb-image" alt="tb cat">
+      </div>
+    </div>
+  </div>
+  <div class="placeholder-view" id="view-617-623" style="position: relative; overflow: hidden;">
+    <img src="10_.png" class="story-image"
+      style="position: absolute; top: 7.5%; left: 7.5%; width: 85%; height: 85%; object-fit: contain; z-index: 1;"
+      alt="10.png">
+    <div class="mansu-container"
+      style="position: absolute; top: -55%; left: 50%; width: 100%; display: flex; justify-content: center; z-index: 100;">
+      <div class="typing-text-mansu" style="width: auto; max-width: none;">만수무강냥을 기원하며..</div>
+    </div>
+  </div>
+  <div class="placeholder-view" id="view-1026-391">
+    <div class="video-overlay-container" style="position: relative; width: 100vw; height: 100vh;">
+      <img src="3_.png" class="story-image" style="position: absolute; top: 0; left: 0; z-index: 1;" alt="3.png">
+      <img src="ch.png" class="paw-anim paw-1" alt="paw 1">
+      <img src="paw_.png" class="paw-anim paw-2" alt="paw 2">
+      <img src="ch.png" class="paw-anim paw-3" alt="paw 3">
+    </div>
+  </div>
+  <div class="placeholder-view" id="view-1027-623">
+    <div class="video-overlay-container" style="position: relative; width: 100vw; height: 100vh;">
+      <img src="9_.png" class="story-image" style="position: absolute; top: 0; left: 0; z-index: 1;" alt="9.png">
+      <img src="bc.png" class="dot-anim dot-1" alt="dot 1">
+      <img src="bc.png" class="dot-anim dot-2" alt="dot 2">
+      <img src="bc.png" class="dot-anim dot-3" alt="dot 3">
+    </div>
+  </div>
+  <div class="placeholder-view" id="view-1061-276">
+    <img src="2y_.png" class="story-image" alt="2y.png">
+  </div>
+  <div class="placeholder-view" id="view-1221-238">
+    <img src="5_.png" class="story-image" alt="5y.png">
+  </div>
+  <div class="placeholder-view" id="view-1178-361">
+    <div class="video-overlay-container" style="position: relative; width: 100vw; height: 100vh;">
+      <img src="6.png" class="story-image" style="position: absolute; top: 0; left: 0; z-index: 1;" alt="6y">
+      <img src="cr.png" class="cr-left" alt="shock left">
+      <img src="cr.png" class="cr-right" alt="shock right">
+    </div>
+  </div>
+
+  <div class="placeholder-view" id="view-1235-552">
+    <div class="video-overlay-container" style="position: relative; width: 100vw; height: 100vh;">
+      <img src="8_.png" class="story-image" style="position: absolute; top: 0; left: 0; z-index: 1;" alt="8_.png">
+
+      <!-- Cat 1 Relay -->
+      <div class="cat-relay-container cat-8-relay-1">
+        <img src="8!.png" class="cat-relay-icon icon-normal" alt="8!">
+        <img src="8!!.png" class="cat-relay-icon icon-star" alt="8!!">
+      </div>
+      <!-- Cat 2 Relay -->
+      <div class="cat-relay-container cat-8-relay-2">
+        <img src="8!.png" class="cat-relay-icon icon-normal" alt="8!">
+        <img src="8!!.png" class="cat-relay-icon icon-star" alt="8!!">
+      </div>
+      <!-- Cat 3 Relay -->
+      <div class="cat-relay-container cat-8-relay-3">
+        <img src="8!.png" class="cat-relay-icon icon-normal" alt="8!">
+        <img src="8!!.png" class="cat-relay-icon icon-star" alt="8!!">
+      </div>
+    </div>
+  </div>
+  <div class="placeholder-view" id="view-1150-450">
+    <div class="video-overlay-container" style="position: relative; width: 100vw; height: 100vh;">
+      <img src="1y_.png" class="story-image" style="position: absolute; top: 0; left: 0; z-index: 1;" alt="1y">
+      <video class="video-overlay" src="IMG_0365.mov" autoplay loop muted playsinline
+        style="position: absolute; top: 9.8%; right: 4.2%; width: 25%; height: 72%; object-fit: cover; z-index: 2; border-radius: 4px;"></video>
+    </div>
+  </div>
+
+  <!-- RESTORED PLACEHOLDER VIEWS -->
+  <div class="placeholder-view" id="view-574-343">
+    <img src="11_3.png" class="story-image-full" alt="11_3">
+  </div>
+  <div class="placeholder-view" id="view-574-366">
+    <img src="11_2.png" class="story-image-full" alt="11_2">
+  </div>
+  <div class="placeholder-view" id="view-574-399">
+    <img src="11_0.png" class="story-image-full" alt="11_0">
+  </div>
+  <div class="placeholder-view" id="view-574-446">
+    <img src="10_1.png" class="story-image-full" alt="10_1">
+  </div>
+  <div class="placeholder-view" id="view-574-539">
+    <img src="10_3.png" class="story-image-full" alt="10_3">
+  </div>
+  <div class="placeholder-view" id="view-574-568">
+    574x568 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-574-587">
+    574x587 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-574-605">
+    <img src="10_2.png" class="story-image-full" alt="10_2">
+  </div>
+  <div class="placeholder-view" id="view-574-621">
+    <div class="video-overlay-container" style="position: relative; width: 100%; height: 100%;">
+      <img src="10_4.png" class="story-image-full" alt="10_4">
+      <img src="cr.png" class="cr-left" style="top: 10%; left: 5%; width: 20%;" alt="shock left">
+      <img src="cr.png" class="cr-right" style="top: 10%; right: 5%; width: 20%;" alt="shock right">
+    </div>
+  </div>
+  <div class="placeholder-view" id="view-600-319">
+    600x319 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-607-296">
+    <img src="11_4.png" class="story-image-full" alt="11_4">
+  </div>
+  <div class="placeholder-view" id="view-616-492">
+    616x492 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-680-296">
+    680x296 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-713-625">
+    713x625 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-774-370">
+    774x370 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-788-627">
+    788x627 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-798-428">
+    798x428 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-868-629">
+    868x629 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-885-408">
+    885x408 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-942-387">
+    942x387 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-945-628">
+    945x628 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-1028-204">
+    1028x204 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-1033-233">
+    1033x233 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-1045-166">
+    1045x166 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-1095-331">
+    1095x331 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-1096-418">
+    1096x418 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-1106-165">
+    1106x165 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-1108-624">
+    1108x624 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-1130-321">
+    <img src="10_0.png" class="story-image-full" alt="8 Year Olds Story Alt">
+    <div class="walk-anim-container">
+      <div class="target-square square-left"></div>
+      <img src="tb.png" class="tb-walker" alt="walking tb">
+      <div class="target-square square-right"></div>
+    </div>
+  </div>
+  <div class="placeholder-view" id="view-1143-383">
+    1143x383 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-1164-168">
+    1164x168 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-1168-425">
+    <img src="10_0.png" class="story-image-full" alt="10 Year Olds Story">
+    <div class="walk-anim-container">
+      <div class="target-square square-left"></div>
+      <img src="tb.png" class="tb-walker" alt="walking tb">
+      <div class="target-square square-right"></div>
+    </div>
+  </div>
+  <div class="placeholder-view" id="view-1184-193">
+    1184x193 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-1190-626">
+    1190x626 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-1198-224">
+    1198x224 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-1214-428">
+    1214x428 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-1218-180">
+    1218x180 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-1235-218">
+    1235x218 Screen
+    <span>Layout goes here</span>
+  </div>
+  <div class="placeholder-view" id="view-1235-482">
+    1235x482 Screen
+    <span>Layout goes here</span>
+  </div>
+
+  <div id="custom-cursor"></div>
+  <script>
+    const customCursor = document.getElementById('custom-cursor');
+    document.addEventListener('mousemove', (e) => {
+      customCursor.style.transform = `translate3d(${e.clientX - 10}px, ${e.clientY - 10}px, 0)`;
+    });
+  </script>
+</body>
+
+</html>

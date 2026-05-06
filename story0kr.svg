@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="bubblewand" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 171.12 26.99">
+  <defs>
+    <style>
+      @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+      .cls-1 {
+        fill: #ebf4f9;
+        font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+        font-size: 8px;
+      }
+    </style>
+  </defs>
+  <text class="cls-1" transform="translate(0 6.43)"><tspan x="0" y="0">떡비가 0개월이였을 때, 그는 꽤나 안좋은 일이 있었다. </tspan><tspan x="0" y="9.6">그는 뱃속에서부터 형과 누나들에게 짓눌려 꼬리 뼈가 </tspan><tspan x="0" y="19.2">꺾여서 태어났다고 한다.</tspan></text>
+</svg>
