@@ -925,6 +925,59 @@ html {
   animation-delay: 3s;
 }
 
+/* --- Video Story (7_0 Screen) --- */
+.video-story-view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.story-video-overlay {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 200px;
+  height: auto;
+  z-index: 10;
+}
+
+.story-video-overlay-right {
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  width: 180px;
+  height: auto;
+  z-index: 60;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.center-anim-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  z-index: 20;
+}
+
+.c-anim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.c-frame-1 {
+  animation: altFlash1 1.2s infinite;
+}
+
+.c-frame-2 {
+  animation: altFlash2 1.2s infinite;
+}
+
 @keyframes altFlash1 {
 
   0%,
