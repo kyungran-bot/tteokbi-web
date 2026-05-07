@@ -186,7 +186,7 @@ html {
   padding: 0;
   width: 100%;
   height: 100%;
-  background-color: #20140d;
+  background-color: #1a100b;
   color: #ebf4f9;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   overflow: hidden;
@@ -346,6 +346,603 @@ html {
   height: 100%;
   z-index: 3;
   pointer-events: none;
+}
+
+/* --- 8 Year Olds Layout --- */
+.eight-year-view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #ebf4f9;
+}
+
+.eight-year-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.eight-year-label {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  background-color: #1a100b;
+  color: #fff;
+  padding: 6px 14px;
+  font-family: Pretendard, "Apple SD Gothic Neo", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  z-index: 10;
+  letter-spacing: -0.5px;
+}
+
+.eight-year-photo {
+  position: absolute;
+  top: 50%;
+  right: 55%;
+  /* 우측 중앙에 배치 */
+  transform: translateY(-50%);
+  width: 26%;
+  /* 적당히 작은 크기 */
+  z-index: 5;
+  opacity: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: appearSuddenly 0s forwards 1s;
+}
+
+@keyframes appearSuddenly {
+  to {
+    opacity: 1;
+  }
+}
+
+/* --- 9 Year Olds Simple Overlay --- */
+.nine-year-view-simple {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.nine-year-bg-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nine-year-photo-overlay {
+  position: absolute;
+  top: 50%;
+  right: 62%;
+  /* 우측 중앙 */
+  transform: translateY(-50%);
+  width: 23%;
+  /* 적당히 작은 크기 */
+  z-index: 5;
+  opacity: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: appearSuddenly 0s forwards 1s;
+}
+
+
+.nine-year-sequential-container-90 {
+  position: absolute;
+  top: 18%;
+  right: 70.5%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 20%;
+  z-index: 5;
+}
+
+.nine-year-sequential-container-92 {
+  position: absolute;
+  top: 18%;
+  right: 70.5%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 20%;
+  z-index: 5;
+}
+
+.nine-year-seq-photo {
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.photo-seq-1 {
+  animation: appearSuddenly 0s forwards 1s;
+}
+
+.photo-seq-2 {
+  animation: appearSuddenly 0s forwards 2s;
+}
+
+.nine-year-strip-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15%;
+  height: 100%;
+  background-color: rgba(233, 244, 249, 0.7);
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+  z-index: 5;
+  box-sizing: border-box;
+}
+
+.nine-year-strip-photo {
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.photo-strip-1 {
+  animation: appearSuddenly 0s forwards 1s;
+}
+
+.photo-strip-2 {
+  animation: appearSuddenly 0s forwards 2s;
+}
+
+.photo-strip-3 {
+  animation: appearSuddenly 0s forwards 3s;
+}
+
+.photo-strip-4 {
+  animation: appearSuddenly 0s forwards 4s;
+}
+
+/* --- Typing Effect Text --- */
+.typing-text-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+
+.typing-text-long {
+  --typing-width: 1040px; /* <--- 여기서 긴 문장의 너비를 조절하세요! */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.5);
+  font-family: Pretendard, "Apple SD Gothic Neo", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: none;
+  display: block;
+  border-right: 3px solid white;
+  width: 0;
+  animation: typing-long 4s steps(60, end) forwards, blink-caret 0.75s step-end infinite;
+  z-index: 10;
+  letter-spacing: -0.8px;
+}
+
+@keyframes typing-simple {
+  from {
+    width: 0;
+  }
+  to {
+    width: max-content;
+    border-right: none;
+  }
+}
+
+@keyframes typing-long {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--typing-width);
+    border-right: none;
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: white;
+  }
+}
+
+/* --- 2016 Screen (Final Correct Version) --- */
+.two-year-view-final {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.two-year-overlay-container {
+  position: absolute;
+  top: 10%;
+  right: 27%;
+  height: 80%;
+  display: flex;
+  flex-direction: row-reverse;
+  /* Right to Left */
+  gap: 20px;
+  z-index: 10;
+}
+
+.two-year-overlay-photo {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  opacity: 0;
+  animation: appearSuddenly 0s forwards;
+}
+
+.overlay-1 {
+  animation-delay: 1s;
+}
+
+/* Rightmost */
+.overlay-2 {
+  animation-delay: 2s;
+}
+
+/* Left of rightmost */
+
+/* --- 2 Year Series (2_1 Screen) --- */
+.two-year-series-view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.two-year-overlay-left {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25%;
+  /* "작게" (small) */
+  height: auto;
+  opacity: 0;
+  animation: appearSuddenly 0s forwards 1s;
+  /* "딱 나타나게" after 1s */
+  z-index: 10;
+}
+
+/* --- 2 Week Story (2_0 Screen) --- */
+.two-week-story-view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #ebf4f9;
+  overflow: hidden;
+}
+
+.story-right-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+}
+
+.story-overlay-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  padding: 40px;
+  background-color: #ebf4f9; /* Cover up background text */
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.story-top-label {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  background-color: #1a1512;
+  color: white;
+  width: max-content;
+  padding: 6px 12px;
+  font-family: Pretendard;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.story-dot-container {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+}
+
+.story-main-title {
+  color: #1a1512;
+  font-family: Pretendard;
+  font-weight: 800;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.story-sub-text {
+  color: #1a1512;
+  font-family: Pretendard;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.story-dot {
+  position: absolute;
+  width: 30px;
+  height: auto;
+  opacity: 0;
+  animation: appearAndDisappear 3s infinite;
+}
+
+.dot-1 {
+  left: 0;
+  bottom: 0;
+  animation-delay: 0s;
+}
+
+.dot-2 {
+  left: 150px;
+  bottom: 100px;
+  animation-delay: 1s;
+}
+
+.dot-3 {
+  left: 300px;
+  bottom: 40px;
+  animation-delay: 2s;
+}
+
+@keyframes appearAndDisappear {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  10%,
+  50% {
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
+}
+
+/* --- Chair Story (22_ Screen) --- */
+.chair-story-view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #ebf4f9;
+}
+
+.chair-overlay-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  padding-left: 50px;
+  padding-top: 60px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  background-color: #ebf4f9; /* Cover background text */
+}
+
+.chair-top-label {
+  background-color: #1a1512;
+  color: white;
+  width: max-content;
+  padding: 6px 12px;
+  font-family: Pretendard;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.chair-main-text {
+  color: #1a1512;
+  font-family: Pretendard;
+  font-weight: 600;
+  font-size: 1.1rem;
+  letter-spacing: -0.5px;
+}
+
+.chair-photo-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-right: 15px;
+  z-index: 5;
+}
+
+.chair-photo {
+  height: 90%;
+  width: auto;
+  object-fit: contain;
+  opacity: 0;
+  animation: appearSuddenly 0s forwards;
+}
+
+.chair-photo.photo-1 {
+  animation-delay: 1s;
+}
+
+.chair-photo.photo-2 {
+  animation-delay: 2s;
+}
+
+.chair-photo.photo-3 {
+  animation-delay: 3s;
+}
+
+/* --- Alternating Strip (222_ Screen) --- */
+.alternating-strip-view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #ebf4f9;
+  overflow: hidden;
+}
+
+.alternating-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  z-index: 50; /* Ensure it is on top */
+}
+
+.alt-item {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  opacity: 0;
+  animation: appearSuddenly 0s forwards;
+}
+
+.alt-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.alt-seq-1 { animation-delay: 1s; }
+.alt-seq-2 { animation-delay: 2s; }
+.alt-seq-3 { animation-delay: 3s; }
+.alt-seq-4 { animation-delay: 4s; }
+.alt-seq-5 { animation-delay: 5s; }
+.alt-seq-6 { animation-delay: 6s; }
+
+.alt-label {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  white-space: nowrap;
+}
+
+/* --- Dot Story Final (2222_ Screen) --- */
+.dot-story-view-final {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #ebf4f9;
+}
+
+.dot-container-horizontal-v2 {
+  position: absolute;
+  top: 60%;
+  right: 15%;
+  display: flex;
+  gap: 30px;
+  z-index: 20;
+}
+
+.dot-item-v2 {
+  width: 150px;
+  height: auto;
+  opacity: 0;
+  animation: appearSuddenly 0s forwards;
+}
+
+.dot-item-v2.seq-1 { animation-delay: 1s; }
+.dot-item-v2.seq-2 { animation-delay: 2s; }
+.dot-item-v2.seq-3 { animation-delay: 3s; }
+
+.center-anim-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px; /* Adjust size as needed */
+  height: 120px;
+  z-index: 20;
+}
+
+.c-anim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.c-frame-1 {
+  animation: altFlash1 1.2s infinite;
+}
+
+.c-frame-2 {
+  animation: altFlash2 1.2s infinite;
+}
+
+@keyframes altFlash1 {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes altFlash2 {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
 
 @keyframes continuousShake {
@@ -907,61 +1504,6 @@ html {
   50% {
     border-color: black;
   }
-}
-
-.tb-11-container {
-  position: absolute;
-  left: 20%;
-  top: 27%;
-  transform: translate(-10%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 2;
-}
-
-.typing-text-11 {
-  font-family: Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  color: #17120f;
-  margin-bottom: 6px;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid #17120f;
-  width: auto;
-  max-width: 0;
-  animation: typing11 3s steps(15, end) infinite, blinkCaret11 0.75s step-end infinite;
-}
-
-@keyframes typing11 {
-
-  0%,
-  10% {
-    max-width: 0;
-  }
-
-  80%,
-  100% {
-    max-width: 15em;
-  }
-}
-
-@keyframes blinkCaret11 {
-
-  from,
-  to {
-    border-color: transparent;
-  }
-
-  50% {
-    border-color: #17120f;
-  }
-}
-
-.tb-image-11 {
-  width: 45px;
-  height: auto;
 }
 
 .mansu-container {
