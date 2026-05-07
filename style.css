@@ -514,12 +514,13 @@ html {
 
 
 .typing-text-long {
-  --typing-width: 1040px; /* <--- 여기서 긴 문장의 너비를 조절하세요! */
+  --typing-width: 1040px;
+  /* <--- 여기서 긴 문장의 너비를 조절하세요! */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: rgb(22, 22, 22);
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.5);
   font-family: Pretendard, "Apple SD Gothic Neo", sans-serif;
   font-size: 1.1rem;
@@ -528,7 +529,7 @@ html {
   overflow: hidden;
   max-width: none;
   display: block;
-  border-right: 3px solid white;
+  border-right: 3px solid rgb(22, 22, 22);
   width: 0;
   animation: typing-long 4s steps(60, end) forwards, blink-caret 0.75s step-end infinite;
   z-index: 10;
@@ -539,6 +540,7 @@ html {
   from {
     width: 0;
   }
+
   to {
     width: max-content;
     border-right: none;
@@ -549,6 +551,7 @@ html {
   from {
     width: 0;
   }
+
   to {
     width: var(--typing-width);
     border-right: none;
@@ -652,7 +655,8 @@ html {
   width: 50%;
   height: 100%;
   padding: 40px;
-  background-color: #ebf4f9; /* Cover up background text */
+  background-color: #ebf4f9;
+  /* Cover up background text */
   z-index: 20;
   display: flex;
   flex-direction: column;
@@ -759,7 +763,8 @@ html {
   z-index: 10;
   display: flex;
   flex-direction: column;
-  background-color: #ebf4f9; /* Cover background text */
+  background-color: #ebf4f9;
+  /* Cover background text */
 }
 
 .chair-top-label {
@@ -829,7 +834,8 @@ html {
   display: flex;
   height: 100%;
   width: 100%;
-  z-index: 50; /* Ensure it is on top */
+  z-index: 50;
+  /* Ensure it is on top */
 }
 
 .alt-item {
@@ -850,12 +856,29 @@ html {
   object-fit: cover;
 }
 
-.alt-seq-1 { animation-delay: 1s; }
-.alt-seq-2 { animation-delay: 2s; }
-.alt-seq-3 { animation-delay: 3s; }
-.alt-seq-4 { animation-delay: 4s; }
-.alt-seq-5 { animation-delay: 5s; }
-.alt-seq-6 { animation-delay: 6s; }
+.alt-seq-1 {
+  animation-delay: 1s;
+}
+
+.alt-seq-2 {
+  animation-delay: 2s;
+}
+
+.alt-seq-3 {
+  animation-delay: 3s;
+}
+
+.alt-seq-4 {
+  animation-delay: 4s;
+}
+
+.alt-seq-5 {
+  animation-delay: 5s;
+}
+
+.alt-seq-6 {
+  animation-delay: 6s;
+}
 
 .alt-label {
   position: absolute;
@@ -890,35 +913,16 @@ html {
   animation: appearSuddenly 0s forwards;
 }
 
-.dot-item-v2.seq-1 { animation-delay: 1s; }
-.dot-item-v2.seq-2 { animation-delay: 2s; }
-.dot-item-v2.seq-3 { animation-delay: 3s; }
-
-.center-anim-container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 120px; /* Adjust size as needed */
-  height: 120px;
-  z-index: 20;
+.dot-item-v2.seq-1 {
+  animation-delay: 1s;
 }
 
-.c-anim {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.dot-item-v2.seq-2 {
+  animation-delay: 2s;
 }
 
-.c-frame-1 {
-  animation: altFlash1 1.2s infinite;
-}
-
-.c-frame-2 {
-  animation: altFlash2 1.2s infinite;
+.dot-item-v2.seq-3 {
+  animation-delay: 3s;
 }
 
 @keyframes altFlash1 {
